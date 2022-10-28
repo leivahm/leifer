@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
+  public image:string | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    this.image = 'https://picsum.photos/536/354';
+    console.log('Llamando componente')
   }
 
 }
