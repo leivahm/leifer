@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from './rest.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,31 +11,19 @@ export class AppComponent implements OnInit {
   title = 'portfolio-app';
   public listdeVideos:Array<any> = []
 
+  constructor(private RestService:RestService){
+
+  }
+
   ngOnInit(): void {
+    this.cargarData();
 
-    this.listdeVideos = [
-      {
-        title:'Video 1',
-        subtitle:'Subtitle video 1',
-        img:'https://picsum.photos/536/354'
-      },
-      {
-        title:'Video 2',
-        subtitle:'Subtitle video 2',
-        img:'https://picsum.photos/536/353'
-      },
-      {
-        title:'Video 3',
-        subtitle:'Subtitle video 2',
-        img:'https://picsum.photos/536/352'
-      },
-      {
-        title:'Video 4',
-        subtitle:'Subtitle video 4',
-        img:'https://picsum.photos/536/350'
-      }
+  }
 
-    ]
-
+  public cargarData(){
+    this.RestService.get('http://localhost:3000/posts')
+    .subscribe(respuesta => {
+      console.log(respuesta);
+    })
   }
 }
