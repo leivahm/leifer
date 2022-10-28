@@ -24,8 +24,13 @@ export class AppComponent implements OnInit {
       },
       {
         title:'Video 3',
-        subtitle:'Subtitle video 3',
+        subtitle:'Subtitle video 2',
         img:'https://picsum.photos/536/352'
+      },
+      {
+        title:'Video 4',
+        subtitle:'Subtitle video 4',
+        img:'https://picsum.photos/536/350'
       }
 
     ]
